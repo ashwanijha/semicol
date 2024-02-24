@@ -91,7 +91,7 @@ print(order_index)
 
 # %%
 order_diagnosis = patient_info['Order Number']+"_"+patient_info['Initial Diagnosis'].replace(to_replace="\s+",value="_",regex=True)
-patient_first_name = "Patient Name: " + patient_info['Patient First Name']+" " + + patient_info['Patient Last Name']
+patient_first_name = "Patient Name: " + patient_info['Patient First Name']+" " + patient_info['Patient Last Name']
 patient_last_name = "Patient Last Name: " + patient_info['Patient Last Name']
 gender = "Gender/Sex: " + patient_info['Gender']
 date_of_birth = patient_info['DOB']
@@ -167,16 +167,16 @@ def sections(canvas,doc):
     canvas.restoreState()
 
 dob_patient = "Date of Birth: " + str(date_of_birth[order_index]).split(" ")[0]
-collection_date = "Sample Collection Date: " + str(sample_collection_date[1]).split(" ")[0]
-process_date = "Sample Processing Date: " + str(sample_processing_date[1]).split(" ")[0]
+collection_date = "Sample Collection Date: " + str(sample_collection_date[order_index]).split(" ")[0]
+process_date = "Sample Processing Date: " + str(sample_processing_date[order_index]).split(" ")[0]
 
 text_data_before_table = []
 text_data_before_table.append([patient_first_name[order_index],gender[order_index]])
-text_data_before_table.append([dob_patient,medical_record_number[1]])
-text_data_before_table.append([sample_type[1],sample_source[1]])
-text_data_before_table.append([physician[1],institute[1]])
+text_data_before_table.append([dob_patient,medical_record_number[order_index]])
+text_data_before_table.append([sample_type[order_index],sample_source[order_index]])
+text_data_before_table.append([physician[order_index],institute[order_index]])
 text_data_before_table.append([collection_date,process_date])
-text_data_before_table.append([initial_diagnosis[1],final_diagnosis[1]])                        
+text_data_before_table.append([initial_diagnosis[order_index],final_diagnosis[order_index]])                        
 
 
  
